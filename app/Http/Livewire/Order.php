@@ -168,6 +168,8 @@ class Order extends Component implements Forms\Contracts\HasForms
 
     public function render(): View
     {
+
+ 
         return view('livewire.order');
     }
 }

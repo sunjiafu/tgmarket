@@ -15,6 +15,7 @@ use Filament\Tables;
 use Filament\Tables\Filters\Layout;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use RalphJSmit\Filament\SEO\SEO;
 
 
 
@@ -33,7 +34,8 @@ class ServiceResource extends Resource
                 Forms\Components\TextInput::make('serviceid')->required(),
                 Forms\Components\TextInput::make('rate')->required(),
                 Forms\Components\RichEditor::make('details')->required(),
-                MultiSelect::make('category')->relationship('category','name')
+                MultiSelect::make('category')->relationship('category','name'),
+                SEO::make(),
               
             ]);
     }
