@@ -42,11 +42,21 @@
           <x-login />
         </div>
       </div>
+
     </div>
+  
+<x-youshi/>
+<!-- 优势介绍结束 -->
+<!-- Section: Design Block -->
+
+</div>
+<!-- Container for demo purpose -->
   </section>
   <!-- Section: Design Block -->
 
 </div>
+
+
 <!-- /footer -->
 
 

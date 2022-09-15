@@ -3403,6 +3403,14 @@ select{
   margin-left: -0.75rem;
   margin-right: -0.75rem;
 }
+.my-24{
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+.my-12{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 .ml-3{
   margin-left: 0.75rem;
 }
@@ -3540,6 +3548,9 @@ select{
 }
 .-mr-6{
   margin-right: -1.5rem;
+}
+.mb-32{
+  margin-bottom: 8rem;
 }
 .block{
   display: block;
@@ -3785,6 +3796,12 @@ select{
 }
 .grow{
   flex-grow: 1;
+}
+.grow-0{
+  flex-grow: 0;
+}
+.basis-auto{
+  flex-basis: auto;
 }
 .table-auto{
   table-layout: auto;
@@ -4243,6 +4260,10 @@ select{
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
+.rounded-t-lg{
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
 .border-2{
   border-width: 2px;
 }
@@ -4608,6 +4629,10 @@ select{
   padding-left: 0.375rem;
   padding-right: 0.375rem;
 }
+.px-7{
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
 .pt-2{
   padding-top: 0.5rem;
 }
@@ -4753,6 +4778,9 @@ select{
 }
 .leading-loose{
   line-height: 2;
+}
+.leading-snug{
+  line-height: 1.375;
 }
 .tracking-tight{
   letter-spacing: -0.025em;
@@ -5259,6 +5287,10 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
+.hover\:bg-gray-900:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
 .hover\:text-gray-700:hover{
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -5444,6 +5476,10 @@ select{
 }
 .focus\:bg-gray-500\/5:focus{
   background-color: rgb(107 114 128 / 0.05);
+}
+.focus\:bg-gray-900:focus{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 .focus\:text-gray-500:focus{
   --tw-text-opacity: 1;
@@ -6839,6 +6875,10 @@ select{
     align-items: flex-start;
   }
 
+  .md\:justify-start{
+    justify-content: flex-start;
+  }
+
   .md\:justify-between{
     justify-content: space-between;
   }
@@ -6874,6 +6914,10 @@ select{
   .md\:px-2{
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  .md\:text-left{
+    text-align: left;
   }
 
   .md\:text-6xl{
@@ -7004,6 +7048,10 @@ select{
     width: 1.5rem;
   }
 
+  .lg\:w-6\/12{
+    width: 50%;
+  }
+
   .lg\:max-w-\[var\(--sidebar-width\)\]{
     max-width: var(--sidebar-width);
   }
@@ -7131,6 +7179,14 @@ select{
 
   .lg\:gap-8{
     gap: 2rem;
+  }
+
+  .lg\:rounded-tr-none{
+    border-top-right-radius: 0px;
+  }
+
+  .lg\:rounded-bl-lg{
+    border-bottom-left-radius: 0.5rem;
   }
 
   .lg\:border-r{
@@ -7330,6 +7386,14 @@ select{
 
   .xl\:hidden{
     display: none;
+  }
+
+  .xl\:w-4\/12{
+    width: 33.333333%;
+  }
+
+  .xl\:w-8\/12{
+    width: 66.666667%;
   }
 
   .xl\:columns-1{
