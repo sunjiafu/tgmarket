@@ -72,10 +72,9 @@
               </p>
             </div>
           </div>
-          <button type="button"
-            class="inline-block px-7 py-3 bg-gray-800 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">
-            Buy now
-          </button>
+
+          <a href="{{ route('login') }}" class="inline-block px-7 py-3 bg-gray-800    text-white   fount-medium text-sm  leading-snug uppercase rounded shadow-md hover:underline hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900  active:shadow-lg transition duration-150 ease-in-out no-underline"  >立即购买</a>
+          
         </div>
       </div>
     </div>

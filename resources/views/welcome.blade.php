@@ -22,10 +22,10 @@
   <section class="mb-40">
 
     <x-Nav />
-    <div class="px-6 py-12 md:px-12 bg-gray-100 text-gray-800 text-center lg:text-left">
+    <div class="px-6 py-6 md:px-12 bg-gray-100 text-gray-800 text-center lg:text-left">
       <div class="container mx-auto xl:px-32">
         <div class="grid lg:grid-cols-2 gap-12 flex items-center">
-          <div class="mt-12 lg:mt-0">
+          <div class="mt-12 lg:mt-4">
             <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">The best offer <br /><span class="text-blue-600">购买电报会员</span></h1>
             <p class="text-gray-600">
               为您的Telegram 频道或群组购买真实会员，合法且有质量保证，市场价格最低
