@@ -11,23 +11,12 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="order" :active="request()->routeIs('order')">
-                        创建订单
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('orderlist') }}" :active="request()->routeIs('orderlist')">
-                        订单
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('pay') }}" :active="request()->routeIs('pay')">
-                        充值
-                    </x-jet-nav-link>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-16 sm:flex">
+                 
                 </div>
             </div>
 
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden sm:flex sm:items-center sm:ml-12">
               
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">

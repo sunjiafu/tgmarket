@@ -21,7 +21,7 @@
         @stack('scripts')
     </head>
 
-    <body class="antialiased">
+    <body>
         <div>
     @include('navigation-menu')
         </div>

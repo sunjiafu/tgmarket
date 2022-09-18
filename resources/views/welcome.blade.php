@@ -12,6 +12,10 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('js/app.js') }}">
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+
   <!-- Styles -->
 
 </head>
@@ -19,7 +23,7 @@
 <div>
 
   <!-- Section: Design Block -->
-  <section class="mb-40">
+  <section class="mb-10">
 
     <x-Nav />
     <div class="px-6 py-6 md:px-12 bg-gray-100 text-gray-800 text-center lg:text-left">
@@ -44,20 +48,23 @@
       </div>
 
     </div>
-  
-<x-youshi/>
+
 <!-- 优势介绍结束 -->
 <!-- Section: Design Block -->
 
-</div>
+
 <!-- Container for demo purpose -->
   </section>
+    
+<x-youshi/>
+  <x-faq/>
+  <x-footer/>
   <!-- Section: Design Block -->
+<!-- /footer -->
 
 </div>
 
-
-<!-- /footer -->
+</div>
 
 
 </body>

@@ -1,22 +1,12 @@
-<div>
-<div class="py-12">
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-<x-filament::card.index>
+<main class="bg-white dark:bg-gray-800 rounded-2xl  relative ">
 
-</x-filament::card.index>
-<x-filament::button>
-123456
-</x-filament::button>
+        <x-sidebar />
 
-<x-filament::link>
-123456
-</x-filament::link>
+        <div class="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
+                <div class="  pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0">
 
-<x-filament::tabs.item>
-notif
-</x-filament::tabs.item>
-<div class="mt-4">
+                <div class="mt-4">
             <form wire:submit.prevent="pay">
     {{ $this->form }}
     <div class=" items-center  mt-4">
@@ -25,10 +15,17 @@ notif
            </x-jet-button>
             </form>
 </div>
-            </div>
-            
-</div>
-</div>
-</div>
 
+        </div>
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+</main>
+
+
+<x-footer />
 
