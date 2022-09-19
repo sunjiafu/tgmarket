@@ -63,6 +63,7 @@ class Order extends Component implements Forms\Contracts\HasForms
 
                             return $service->service->pluck(value: 'name', key: 'id');
                         })
+
                         ->required()
                         ->reactive(),
 
@@ -74,7 +75,7 @@ class Order extends Component implements Forms\Contracts\HasForms
 
                             if (!$delaite) {
 
-                                return null;
+                                return '请详细阅读服务说明';
                             }
 
 
@@ -97,6 +98,12 @@ class Order extends Component implements Forms\Contracts\HasForms
                         ->reactive()
                         ->afterStateUpdated(function ($set, $get, $state) {
                             $rate = Service::find($get('serviceId'));
+
+                            if (!$rate) {
+
+                                return $set('price', 0);
+                            }
+
                             $set('price', $state * $rate->rate / 1000);
                         }),
 
@@ -104,6 +111,8 @@ class Order extends Component implements Forms\Contracts\HasForms
                         ->label('价格')
                         ->disabled()
                         ->placeholder($this->shuliang),
+
+
 
 
 
@@ -149,7 +158,7 @@ class Order extends Component implements Forms\Contracts\HasForms
         $user->order()->create([
 
             'service' => $service_id['name'],
-             'serviceid'=>363749,    //测试环境
+            'serviceid' => 363749,    //测试环境
             //'serviceid' => $addorder->order,   //正式环境启用
             'price' => $this->price,
             'quantity' => $this->shuliang,
@@ -169,7 +178,7 @@ class Order extends Component implements Forms\Contracts\HasForms
     public function render(): View
     {
 
- 
+
         return view('livewire.order');
     }
 }

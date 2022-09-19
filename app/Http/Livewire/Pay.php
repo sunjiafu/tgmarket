@@ -17,7 +17,7 @@ class Pay extends Component implements Forms\Contracts\HasForms
     //初始化充值金额
     public $money = 20;
     //获取用户选择支付方式
-    public $payway;
+    public $payway = 1;
     //引入比特币支付方式
     private Btcpay $Btcpay;
 
@@ -40,13 +40,13 @@ class Pay extends Component implements Forms\Contracts\HasForms
                                 100 => '100$',
 
                             ])
-                            ->hintIcon('heroicon-s-cog')
                             ->required(),
 
                         Forms\Components\Radio::make('payway')
                             ->label('选择支付方式')
-                            ->options(Payway::all()->pluck(value: 'name', key: 'id')->toArray())
+                             ->options(Payway::all()->pluck(value: 'name', key: 'id')->toArray())
                             ->inline()
+                            ->reactive()
                             ->required(),
 
                     ]

@@ -26,7 +26,7 @@
         @if (Route::has('login'))
         <div class="hidden  top-0 right-0 px-6 py-4 sm:block">
           @auth
-          <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 no-underline">Dashboard</a>
+          <a href="{{ url('/order') }}" class="text-sm text-gray-700 dark:text-gray-500 no-underline">创建订单</a>
           @else
           <a href="{{ route('login') }}" class="inline-block px-6 py-2.5 mr-2  bg-transparent  text-white   bg-blue-600 fount-medium text-xs  leading-tight uppercase rounded hover:underline hover:text-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out no-underline"  >登录</a>
 

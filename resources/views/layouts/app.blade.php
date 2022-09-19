@@ -16,17 +16,21 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="/js/flowbite.js"></script>
         @livewireStyles
         @livewireScripts
         @stack('scripts')
     </head>
 
-    <body>
+    <body class="antialiased">
         <div>
     @include('navigation-menu')
         </div>
+     
+
         {{ $slot }}
 
+   
         @livewire('notifications')
     </body>
 </html>

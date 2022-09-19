@@ -1,3 +1,4 @@
+
 <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
     <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
         <div class="mr-12 hidden lg:block">
@@ -6,7 +7,7 @@
         <div class="flex justify-center">
             <a href="#!" class="mr-6 text-gray-600">
 
-                @svg('wechat', 'w-6 h-6')
+             @svg('wechat', 'w-6 h-6')
 
 
             </a>
