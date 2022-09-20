@@ -89,10 +89,47 @@ class Order extends Component implements Forms\Contracts\HasForms
 
                     Forms\Components\TextInput::make('shuliang')
                         ->label('数量')
-                        ->helperText('这里可以放限制数量')
+                        ->helperText(function (callable $get){
+
+
+
+                            $fanwei = Service::find($get('serviceId'));
+
+                            if (!$fanwei) {
+
+                                return null;
+                            }
+
+                           return  '最小数量'.$fanwei->min.'-'.'最大数量'.$fanwei->max;
+
+                        })
                         ->numeric()
-                        ->minValue(500)
-                        ->maxValue(1000)
+                        ->minValue(function (callable $get){
+
+                            $fanwei = Service::find($get('serviceId'));
+
+                            if (!$fanwei) {
+
+                                return null;
+                            }
+
+                            return $fanwei->min;
+
+                            
+                        })
+                        ->maxValue(function (callable $get){
+
+                            $fanwei = Service::find($get('serviceId'));
+
+                            if (!$fanwei) {
+
+                                return null;
+                            }
+
+                            return $fanwei->max;
+
+                            
+                        })
                         ->required()
 
                         ->reactive()

@@ -16,7 +16,9 @@ class Service extends Model
         'name',
         'rate',
         'serviceid',
-        'details'
+        'details',
+        'min',
+        'max'
 
     ];
 

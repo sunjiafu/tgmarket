@@ -4,8 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Filament\Forms;
-use App\Models\Category;
 use App\Models\Payway;
+use App\Service\Usdtpay;
 use App\Service\Btcpay;
 use Illuminate\Support\Str;
 use BTCPayServer\Util\PreciseNumber;
@@ -20,6 +20,8 @@ class Pay extends Component implements Forms\Contracts\HasForms
     public $payway = 1;
     //引入比特币支付方式
     private Btcpay $Btcpay;
+    //引入Usdt支付方式
+    private Usdtpay $Usdtpay;
 
     protected function getFormSchema(): array
     {
@@ -44,7 +46,7 @@ class Pay extends Component implements Forms\Contracts\HasForms
 
                         Forms\Components\Radio::make('payway')
                             ->label('选择支付方式')
-                             ->options(Payway::all()->pluck(value: 'name', key: 'id')->toArray())
+                            ->options(Payway::all()->pluck(value: 'name', key: 'id')->toArray())
                             ->inline()
                             ->reactive()
                             ->required(),
@@ -61,7 +63,7 @@ class Pay extends Component implements Forms\Contracts\HasForms
     {
 
         $this->Btcpay = app('App\Service\Btcpay');
-        // $this->Usdtpay = app('App\PaymentGetway\Usdtpay');
+        $this->Usdtpay = app('App\Service\Usdtpay');
     }
 
 
@@ -74,7 +76,7 @@ class Pay extends Component implements Forms\Contracts\HasForms
         $buyerEail = auth()->user()->email;
         $amount  = PreciseNumber::parseString($this->money);
 
-       //进入支付流程
+        //进入支付流程
 
         if ($this->payway == 1) {
 
@@ -82,6 +84,14 @@ class Pay extends Component implements Forms\Contracts\HasForms
             $bitcoinpay = $this->Btcpay->CreateInvoice($amount, $orderId, $buyerEail);
 
             return redirect()->to($bitcoinpay['checkoutLink']);
+        } elseif ($this->payway == 2) {
+
+            $amount = (float)$this->money;
+
+            $usdt = $this->Usdtpay->CreateInvoice($amount, $orderId);
+
+
+            return redirect()->to($usdt['data']['payment_url']);
         }
     }
     public function render()

@@ -58,9 +58,9 @@
 
 <!-- Container for demo purpose -->
   </section>
-    
+
 <x-youshi/>
-  <x-faq/>
+<x-faq/>
   <x-footer/>
   <!-- Section: Design Block -->
 <!-- /footer -->

@@ -35,7 +35,7 @@
                                                 提交订单
                                         </x-jet-button>
                         </form>
-                        <div wire:loading class=" items-center">
+                        <div wire:loading.delay.shortest wire:target = pay>
         正在跳转至支付链接...
     </div>
                 </div>

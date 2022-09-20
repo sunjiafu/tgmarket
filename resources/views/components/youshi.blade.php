@@ -3,7 +3,7 @@
    <div class="container my-24 px-6 mx-auto">
 
 <!-- Section: Design Block -->
-<section class="mb-6 text-gray-800 text-center md:text-left">
+<section class=" text-gray-800 text-center md:text-left">
   <div class="block rounded-lg shadow-lg bg-white">
     <div class="flex flex-wrap items-center">
       <div class="grow-0 shrink-0 basis-auto block lg:flex w-full lg:w-6/12 xl:w-4/12">

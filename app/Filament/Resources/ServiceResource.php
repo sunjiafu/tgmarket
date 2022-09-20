@@ -33,6 +33,8 @@ class ServiceResource extends Resource
                 Forms\Components\TextInput::make('name')->required(),
                 Forms\Components\TextInput::make('serviceid')->required(),
                 Forms\Components\TextInput::make('rate')->required(),
+                Forms\Components\TextInput::make('min')->required(),
+                Forms\Components\TextInput::make('max')->required(),
                 Forms\Components\RichEditor::make('details')->required(),
                 MultiSelect::make('category')->relationship('category','name'),
                 SEO::make(),
