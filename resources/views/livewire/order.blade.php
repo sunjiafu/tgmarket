@@ -1,3 +1,4 @@
+@section('pagetitle','创建订单')
 <main class="bg-white   dark:bg-gray-800 rounded-2xl  relative ">
 
         <x-sidebar />

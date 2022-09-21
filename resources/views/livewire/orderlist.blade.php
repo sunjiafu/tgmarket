@@ -1,5 +1,5 @@
 
-
+@section('pagetitle','我的订单')
 <main class="bg-white dark:bg-gray-800 rounded-2xl  relative ">
 
         <x-sidebar />
