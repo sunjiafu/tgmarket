@@ -59,10 +59,10 @@ class Myorder extends Component implements Tables\Contracts\HasTable
         ];
     }
 
-    // protected function isTablePaginationEnabled(): bool  //禁用分页功能
-    // {
-    //     return false;
-    // } 
+    protected function isTablePaginationEnabled(): bool  //禁用分页功能
+    {
+        return false;
+    } 
 
 
     protected function getTableEmptyStateHeading(): ?string
@@ -73,9 +73,7 @@ class Myorder extends Component implements Tables\Contracts\HasTable
     public function render()
     {
        
-        $order = auth()->user()->Order;
-      
-        OrderListPush::dispatch($order );
+   
     
         return view('livewire.orderlist');
     }

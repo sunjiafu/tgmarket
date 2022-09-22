@@ -2,7 +2,8 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
     content: ['./resources/**/*.blade.php',
-     './vendor/filament/**/**/*.blade.php,',
+     './vendor/filament/**/**/*.blade.php',
+     './vendor/rappasoft/laravel-livewire-tables/resources/views/**/*.blade.php',
      './node_modules/flowbite/**/*.js'],
     theme: {
         extend: {

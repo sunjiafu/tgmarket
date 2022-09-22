@@ -89,7 +89,7 @@ class Order extends Component implements Forms\Contracts\HasForms
 
                     Forms\Components\TextInput::make('shuliang')
                         ->label('数量')
-                        ->helperText(function (callable $get){
+                        ->helperText(function (callable $get) {
 
 
 
@@ -100,11 +100,10 @@ class Order extends Component implements Forms\Contracts\HasForms
                                 return null;
                             }
 
-                           return  '最小数量'.$fanwei->min.'-'.'最大数量'.$fanwei->max;
-
+                            return  '最小数量' . $fanwei->min . '-' . '最大数量' . $fanwei->max;
                         })
                         ->numeric()
-                        ->minValue(function (callable $get){
+                        ->minValue(function (callable $get) {
 
                             $fanwei = Service::find($get('serviceId'));
 
@@ -114,10 +113,8 @@ class Order extends Component implements Forms\Contracts\HasForms
                             }
 
                             return $fanwei->min;
-
-                            
                         })
-                        ->maxValue(function (callable $get){
+                        ->maxValue(function (callable $get) {
 
                             $fanwei = Service::find($get('serviceId'));
 
@@ -127,8 +124,6 @@ class Order extends Component implements Forms\Contracts\HasForms
                             }
 
                             return $fanwei->max;
-
-                            
                         })
                         ->required()
 
