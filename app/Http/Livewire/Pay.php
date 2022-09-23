@@ -7,6 +7,7 @@ use Filament\Forms;
 use App\Models\Payway;
 use App\Service\Usdtpay;
 use App\Service\Btcpay;
+use App\Models\Paylist;
 use Illuminate\Support\Str;
 use BTCPayServer\Util\PreciseNumber;
 
@@ -76,6 +77,15 @@ class Pay extends Component implements Forms\Contracts\HasForms
         $buyerEail = auth()->user()->email;
         $amount  = PreciseNumber::parseString($this->money);
 
+           //临时保存充值信息
+       Paylist::create([
+        'orderid'=>$orderId,
+        'userid'=>auth()->user()->id,
+        'amount'=>$amount,
+        'payway' =>$this->payway,
+
+       ]);
+
         //进入支付流程
 
         if ($this->payway == 1) {
@@ -93,6 +103,9 @@ class Pay extends Component implements Forms\Contracts\HasForms
 
             return redirect()->to($usdt['data']['payment_url']);
         }
+
+     
+
     }
     public function render()
     {

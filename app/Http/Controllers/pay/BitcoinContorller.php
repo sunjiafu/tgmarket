@@ -17,11 +17,23 @@ class BitcoinContorller extends Controller
         if(!$raw_post_data){
 
         
-
             return 'fail';
  
         };
+        
+          $data = json_decode($raw_post_data, true);
+              if (!$data) {
 
-        fwrite($log.$date,$raw_post_data);
+            return 'fail';
+        }else {
+            fwrite($log,
+            $date. "it.sok" .$data);
+            fclose($log);
+        }
+        
+    
+    
+  
+     
 }
 }
