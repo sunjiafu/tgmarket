@@ -21,5 +21,7 @@ class BitcoinContorller extends Controller
             return 'fail';
  
         };
+
+        fwrite($log.$date,$raw_post_data);
 }
 }
