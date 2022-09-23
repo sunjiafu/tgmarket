@@ -12,10 +12,10 @@ class BitcoinContorller extends Controller
 
     private Btcpay $btcpay;
 
-    public function __construct($btcpay)
+    public function __construct()
     {
 
-        $this->btcpay = $btcpay;
+        $this->btcpay = app('App\Service\Btcpay');
     }
 
     public function notifyUrl(Request $request)
