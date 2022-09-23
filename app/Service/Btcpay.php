@@ -14,11 +14,24 @@ class Btcpay
 
    private $paygetway;
 
+   public $apiKey;
+   public $host;
+   public $currency = 'USD';
+   public $storeId;
+
+
+
    public function __construct()
 
    {
 
       $this->paygetway = Payway::find(1);
+
+      $this->apiKey = $this->paygetway->key;
+
+      $this->host = $this->paygetway->shanghukey;
+
+      $this->storeId = $this->paygetway->shopid;
    }
 
    public  function CreateInvoice(?PreciseNumber $amount = null, ?string $orderId, string $buyerEmail)
@@ -26,20 +39,15 @@ class Btcpay
 
       //加载网关
 
-      $apiKey = $this->paygetway->key;
-      $host = $this->paygetway->shanghukey;
-      $storeId = $this->paygetway->shopid;
-      $currency = 'USD';
-
       $redirectURL = url('test');   //返回URL
 
       //构造订单信息
 
-      $client = new Invoice($host, $apiKey);
+      $client = new Invoice($this->host, $this->apiKey);
 
       $data =  $client->createInvoice(
-         $storeId,
-         $currency,
+         $this->storeId,
+         $this->currency,
          PreciseNumber::parseString($amount),
          $orderId,
          $buyerEmail
@@ -49,5 +57,16 @@ class Btcpay
 
 
       return  $data;
+   }
+
+   public function GetInvoice($invoiceId)
+   {
+
+      $client = new  Invoice($this->host,$this->apiKey);
+
+      $getinvoice = $client->getInvoice($this->storeId,$invoiceId);
+
+      return $getinvoice;
+
    }
 }
