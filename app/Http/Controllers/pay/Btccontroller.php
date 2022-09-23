@@ -5,17 +5,26 @@ namespace App\Http\Controllers\pay;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Btccontroller extends Controller
+class BtcController extends Controller
 {
     public function notifyUrl(Request $request){
 
 
-        $payload = file_get_contents( 'php://input' );
+        $raw_post_data = $request->all();
+        $log = fopen("bit.log",'ab');
+        $date = date('m/d/Y h:i:s a');
+      
+        if(!$raw_post_data){
 
+            return 'fail';
+        };
 
-        return 'ok';
+        $data = json_decode($raw_post_data, true);
 
+        if (!$data) {
 
+            return 'fail';
+        }
 
 
     }

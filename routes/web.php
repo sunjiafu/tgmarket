@@ -3,7 +3,7 @@
 use App\Http\Livewire\Myorder;
 use App\Http\Livewire\Order;
 use App\Http\Livewire\Pay;
-use App\http\Controllers\pay\Btccontroller;
+use App\http\Controllers\pay\BtcController;
 use App\Http\Livewire\Servicelist;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +23,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('service', Servicelist::class);
-Route::post('btcpay/notify_url','Btc@notifyUrl');
+Route::post('btcpay/notify_url',[BtcController::class,'notifyUrl']);
 
 Route::middleware([
     'auth:sanctum',
