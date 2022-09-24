@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Payway;
 use Illuminate\Http\Request;
 use App\Service\Btcpay;
+use BTCPayServer\client\webhook;
 
 class BitcoinContorller extends Controller
 {
@@ -62,7 +63,7 @@ class BitcoinContorller extends Controller
 
             $status =$invoice['status'];// 获取状态
 
-            $payid = $invoice['metadata']['orderId']; //获取orderId 
+            $orderId = $invoice['metadata']['orderId']; //获取orderId 
 
 
 
@@ -71,5 +72,28 @@ class BitcoinContorller extends Controller
             fclose($log);
             throw $e;
         }
+
+         //验证签名
+    $headers =  getallheaders();
+
+    $sig = $headers['Btcpay-Sig'];
+
+    if ($sig !== "sha256=" . hash_hmac('sha256', $raw_post_data, $secret)) {
+        
+        fwrite($log,$date."Error签名错误");
+        fclose($log);
+
+         return 'fail'; //合法数据
+     } else {
+
+        //验证通过处理业务
+
+         $this->orderProcessService->completedOrder($orderId, $price);
+         return 'success';
+     }
     }
+
+   
+
+    
 }
