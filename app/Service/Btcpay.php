@@ -13,7 +13,6 @@ class Btcpay
 {
 
    private $paygetway;
-
    public $apiKey;
    public $host;
    public $currency = 'USD';
@@ -39,18 +38,31 @@ class Btcpay
 
       //加载网关
 
-      $redirectURL = url('test');   //返回URL
+
 
       //构造订单信息
 
       $client = new Invoice($this->host, $this->apiKey);
+
+      $metaData = [
+
+         'itemDesc' => '用户充值',
+
+     ];
+
+      $checkoutOptions = new InvoiceCheckoutOptions();
+
+      $checkoutOptions
+         ->setRedirectURL('https://www.buyteglegram.com/order');
 
       $data =  $client->createInvoice(
          $this->storeId,
          $this->currency,
          PreciseNumber::parseString($amount),
          $orderId,
-         $buyerEmail
+         $buyerEmail,
+         $metaData,
+         $checkoutOptions
       );
 
 
@@ -62,11 +74,10 @@ class Btcpay
    public function GetInvoice($invoiceId)
    {
 
-      $client = new  Invoice($this->host,$this->apiKey);
+      $client = new  Invoice($this->host, $this->apiKey);
 
-      $getinvoice = $client->getInvoice($this->storeId,$invoiceId);
+      $getinvoice = $client->getInvoice($this->storeId, $invoiceId);
 
       return $getinvoice;
-
    }
 }

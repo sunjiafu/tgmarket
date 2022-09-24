@@ -20,7 +20,7 @@ class BitcoinContorller extends Controller
     {
 
         $this->btcpay = app('App\Service\Btcpay');
-        $this->payservice = app('App\Service\payservice');
+        $this->payservice = app('App\Service\Payservice');
     }
 
     public function notifyUrl(Request $request)
@@ -35,7 +35,7 @@ class BitcoinContorller extends Controller
 
             fwrite(
                 $log,
-                $date."没有数据"
+                $date . "没有数据"
             );
             fclose($log);
             return 'fail';
@@ -46,8 +46,8 @@ class BitcoinContorller extends Controller
 
             fwrite(
                 $log,
-                $date."没有数据"
-             
+                $date . "没有数据"
+
             );
             fclose($log);
 
@@ -65,11 +65,11 @@ class BitcoinContorller extends Controller
 
             $amount = $invoice['amount']; //获取价格
 
-            $status =$invoice['status'];// 获取状态
+            $status = $invoice['status']; // 获取状态
 
             $orderId = $invoice['metadata']['orderId']; //获取orderId 
-            
-            
+
+
 
         } catch (\Throwable $e) {
             fwrite($log, $date . "Error: " . $e->getMessage() . '\n');
@@ -77,31 +77,27 @@ class BitcoinContorller extends Controller
             throw $e;
         }
 
-         //验证签名
-    $headers =  getallheaders();
+        //验证签名
+        $headers =  getallheaders();
 
-    $sig = $headers['Btcpay-Sig'];
+        $sig = $headers['Btcpay-Sig'];
 
-    if ($sig !== "sha256=" . hash_hmac('sha256', $raw_post_data, $secret)) {
-        
-        fwrite($log,$date."Error签名错误");
-        fclose($log);
+        if ($sig !== "sha256=" . hash_hmac('sha256', $raw_post_data, $secret)) {
 
-         return 'fail'; 
-     } else {
+            fwrite($log, $date . "Error签名错误");
+            fclose($log);
 
-
-         
-        //验证通过处理业务
-
-        $this->payservice->completedPay($orderId,$amount); 
+            return 'fail';
+        } else {
 
 
-         return 'success';
-     }
+
+            //验证通过处理业务
+
+            $this->payservice->completedPay($orderId, $amount);
+
+
+            return 'success';
+        }
     }
-
-   
-
-    
 }

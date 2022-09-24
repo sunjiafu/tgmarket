@@ -67,7 +67,6 @@ class Pay extends Component implements Forms\Contracts\HasForms
 
         $this->Btcpay = app('App\Service\Btcpay');
         $this->Usdtpay = app('App\Service\Usdtpay');
-
         $this->payservice = app('App\Service\Payservice');
     }
 
