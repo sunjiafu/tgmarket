@@ -10,6 +10,7 @@ use App\Service\Btcpay;
 use App\Models\Paylist;
 use Illuminate\Support\Str;
 use BTCPayServer\Util\PreciseNumber;
+use App\Service\Payservice;
 
 
 class Pay extends Component implements Forms\Contracts\HasForms
@@ -23,6 +24,7 @@ class Pay extends Component implements Forms\Contracts\HasForms
     private Btcpay $Btcpay;
     //引入Usdt支付方式
     private Usdtpay $Usdtpay;
+    private Payservice $payservice;
 
     protected function getFormSchema(): array
     {
@@ -65,11 +67,14 @@ class Pay extends Component implements Forms\Contracts\HasForms
 
         $this->Btcpay = app('App\Service\Btcpay');
         $this->Usdtpay = app('App\Service\Usdtpay');
+
+        $this->payservice = app('App\Service\Payservice');
     }
 
 
     public function pay()
     {
+
 
         //构造订单信息
 
@@ -77,14 +82,14 @@ class Pay extends Component implements Forms\Contracts\HasForms
         $buyerEail = auth()->user()->email;
         $amount  = PreciseNumber::parseString($this->money);
 
-           //临时保存充值信息
-       Paylist::create([
-        'orderid'=>$orderId,
-        'userid'=>auth()->user()->id,
-        'amount'=>$amount,
-        'payway' =>$this->payway,
+        //临时保存充值信息
+        Paylist::create([
+            'orderid' => $orderId,
+            'userid' => auth()->user()->id,
+            'amount' => $amount,
+            'payway' => $this->payway,
 
-       ]);
+        ]);
 
         //进入支付流程
 
@@ -103,9 +108,6 @@ class Pay extends Component implements Forms\Contracts\HasForms
 
             return redirect()->to($usdt['data']['payment_url']);
         }
-
-     
-
     }
     public function render()
     {

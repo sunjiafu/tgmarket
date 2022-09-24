@@ -7,16 +7,20 @@ use App\Models\Payway;
 use Illuminate\Http\Request;
 use App\Service\Btcpay;
 use BTCPayServer\client\webhook;
+use App\Service\Payservice;
 
 class BitcoinContorller extends Controller
 {
 
     private Btcpay $btcpay;
 
+    private Payservice $payservice;
+
     public function __construct()
     {
 
         $this->btcpay = app('App\Service\Btcpay');
+        $this->payservice = app('App\Service\payservice');
     }
 
     public function notifyUrl(Request $request)
@@ -24,14 +28,14 @@ class BitcoinContorller extends Controller
 
 
         $raw_post_data = file_get_contents('php://input');
-        $log = fopen("bit.log", 'ab');
+        $log = fopen("bitcoin.log", 'ab');
         $date = date('m/d/Y h:i:s a');
 
         if (!$raw_post_data) {
 
             fwrite(
                 $log,
-                $date
+                $date."没有数据"
             );
             fclose($log);
             return 'fail';
@@ -42,8 +46,8 @@ class BitcoinContorller extends Controller
 
             fwrite(
                 $log,
-                $date,
-                $data
+                $date."没有数据"
+             
             );
             fclose($log);
 
@@ -59,13 +63,13 @@ class BitcoinContorller extends Controller
 
             $invoice = $this->btcpay->GetInvoice($invoiceId);
 
-            $price = $invoice['amount']; //获取价格
+            $amount = $invoice['amount']; //获取价格
 
             $status =$invoice['status'];// 获取状态
 
             $orderId = $invoice['metadata']['orderId']; //获取orderId 
-
-
+            
+            
 
         } catch (\Throwable $e) {
             fwrite($log, $date . "Error: " . $e->getMessage() . '\n');
@@ -83,12 +87,16 @@ class BitcoinContorller extends Controller
         fwrite($log,$date."Error签名错误");
         fclose($log);
 
-         return 'fail'; //合法数据
+         return 'fail'; 
      } else {
 
+
+         
         //验证通过处理业务
 
-         $this->orderProcessService->completedOrder($orderId, $price);
+        $this->payservice->completedPay($orderId,$amount); 
+
+
          return 'success';
      }
     }
