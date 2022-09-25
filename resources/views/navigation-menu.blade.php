@@ -174,7 +174,7 @@
 
 @guest
 
-    <x-nav/>
+    <x-Nav/>
 
 
 
