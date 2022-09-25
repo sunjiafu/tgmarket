@@ -4,6 +4,8 @@ use App\Http\Livewire\Myorder;
 use App\Http\Livewire\Order;
 use App\Http\Livewire\Pay;
 use App\Http\Controllers\pay\BitcoinContorller;
+use App\Http\Controllers\pay\UsdtContorller;
+use App\Http\Controllers\pay\UsdtController;
 use App\Http\Livewire\Servicelist;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +26,7 @@ Route::get('/', function () {
 
 Route::get('service', Servicelist::class);
 Route::post('btcpay/notifyurl','App\Http\Controllers\pay\BitcoinContorller@notifyUrl');
+Route::post('usdtpay/notifyurl',[UsdtController::class,'notifyUrl']);
 
 Route::middleware([
     'auth:sanctum',

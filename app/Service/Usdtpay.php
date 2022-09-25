@@ -17,7 +17,7 @@ class Usdtpay
             "amount" => $amount,
             "order_id" => $orderId,
             'redirect_url' => 'http://www.baidu.com',
-            'notify_url' => 'http://www.baidu.com'
+            'notify_url' => 'https://www.buyteglegram.com/order'
 
 
         ];
@@ -30,7 +30,7 @@ class Usdtpay
 
         return $body;
     }
-    private function epusdtSign(array $parameter, string $signKey)
+    public function epusdtSign(array $parameter, string $signKey)
     {
         ksort($parameter);
         reset($parameter); //内部指针指向数组中的第一个元素
