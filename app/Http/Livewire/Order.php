@@ -211,6 +211,6 @@ class Order extends Component implements Forms\Contracts\HasForms
     {
 
 
-        return view('livewire.order');
+        return view('livewire.order',['meta_keywords'=>'Tg增加会员,Telegram营销,telegram购买会员']);
     }
 }

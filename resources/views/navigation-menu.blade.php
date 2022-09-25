@@ -1,3 +1,4 @@
+@auth
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -5,11 +6,18 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('index') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                  
+                    <a href="{{ route('index') }}" class="flex items-center">
+      <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Tgmarket</font>
+        </font>
+      </span>
+    </a>
                     </a>
                 </div>
-
+              
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-16 sm:flex">
                  
@@ -162,3 +170,12 @@
         </div>
     </div>
 </nav>
+@endauth
+
+@guest
+
+    <x-nav/>
+
+
+
+@endguest

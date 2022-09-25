@@ -25,7 +25,20 @@
                         </span>
 
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="pay" :active="request()->routeIs('pay')">
+
+                    <x-jet-nav-link href="{{ route('service') }}" :active="request()->routeIs('service')">
+
+                        <span class="text-left">
+
+                            @svg('heroicon-o-table','w-6 h-6 m-auto')
+
+                        </span>
+                        <span class="mx-4 text-sm font-normal">
+                            服务内容
+                        </span>
+
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('pay') }}" :active="request()->routeIs('pay')">
 
                         <span class="text-left">
 

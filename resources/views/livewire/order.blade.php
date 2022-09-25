@@ -1,4 +1,6 @@
 @section('pagetitle','创建订单')
+@section('meta_keywords',"$meta_keywords")
+
 <main class="bg-white   dark:bg-gray-800 rounded-2xl  relative ">
 
         <x-sidebar />

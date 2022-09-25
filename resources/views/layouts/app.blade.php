@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('pagetitle')-{{ config('app.name') }}</title>
+    <meta name="keywords" content="@yield('meta_keywords')">
+    <meta name="description" content="我们已低廉的价格为您提供高质量的Telegram频道或群组的营销服务">
 
     <style>
         [x-cloak] {

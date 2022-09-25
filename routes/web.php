@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
-Route::get('service', Servicelist::class);
+Route::get('service', Servicelist::class)->name('service');
 Route::post('btcpay/notifyurl','App\Http\Controllers\pay\BitcoinContorller@notifyUrl');
 Route::post('usdtpay/notifyurl',[UsdtController::class,'notifyUrl']);
 

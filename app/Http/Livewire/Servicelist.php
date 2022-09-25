@@ -20,6 +20,6 @@ class Servicelist extends Component
     {
 
 
-        return view('livewire.servicelist',['services'=>Service::all()]);
+        return view('livewire.servicelist',['meta_keywords'=>'Tg增加会员,Telegram营销,telegram购买会员']);
     }
 }
