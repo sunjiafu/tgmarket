@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Service;
+use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
 use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
 
@@ -16,30 +17,35 @@ class ServiceTable extends DataTableComponent
     {
         $this->setPrimaryKey('id');
 
-        $this->setSearchLazy();
-        $this->setSearchEnabled();
+        $this->setQueryStringStatus(true);
+        $this->setEagerLoadAllRelationsEnabled();
     }
 
     public function columns(): array
     {
         return [
             Column::make("服务编号", "serviceid")
-            ->sortable(),
+            
+                ->searchable(),
+
             Column::make("服务名称", "name")
-            ->sortable(),
-        
-          
+                ->sortable()
+                ->searchable(),
+
             Column::make("每千人价格", "rate")
-                ->sortable(),
+                ->sortable(fn(Builder $query)=>$query->orderBy('rate'))
+                ->searchable(),
             Column::make("最小订购数量", "min")
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
             Column::make("最大订购数量", "max")
-                ->sortable(),
-            Column::make('details','details')
+                ->sortable()
+                ->searchable(),
+            Column::make('details', 'details')
                 ->sortable()
                 ->view('components.buttonart'),
 
-              
+
             // ->buttons([
             //     LinkColumn::make('View') // make() has no effect in this case but needs to be set anyway
             //         ->title(fn($row) => 'View ' . $row->name)
@@ -51,6 +57,4 @@ class ServiceTable extends DataTableComponent
 
         ];
     }
-
-
 }
