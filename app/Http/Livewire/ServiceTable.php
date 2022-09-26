@@ -6,8 +6,6 @@ use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Service;
 use Illuminate\Database\Eloquent\Builder;
-use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
-use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
 
 class ServiceTable extends DataTableComponent
 {
@@ -42,7 +40,7 @@ class ServiceTable extends DataTableComponent
                 ->sortable()
                 ->searchable(),
             Column::make('details', 'details')
-                ->sortable()
+         
                 ->view('components.buttonart'),
 
 

@@ -177,7 +177,7 @@ class Order extends Component implements Forms\Contracts\HasForms
 
         //正式环境启用
 
-        //$addorder = json_decode($order->order(array('service' => $service_id['serviceid'], 'link' => $this->tglink, 'quantity' => $this->shuliang)));
+        $addorder = json_decode($order->order(array('service' => $service_id['serviceid'], 'link' => $this->tglink, 'quantity' => $this->shuliang)));
 
 
 
@@ -190,8 +190,7 @@ class Order extends Component implements Forms\Contracts\HasForms
         $user->order()->create([
 
             'service' => $service_id['name'],
-            'serviceid' => 363749,    //测试环境
-            //'serviceid' => $addorder->order,   //正式环境启用
+            'serviceid' => $addorder->order,   //正式环境启用
             'price' => $this->price,
             'quantity' => $this->shuliang,
             'url' => $this->tglink,
@@ -211,6 +210,6 @@ class Order extends Component implements Forms\Contracts\HasForms
     {
 
 
-        return view('livewire.order',['meta_keywords'=>'Tg增加会员,Telegram营销,telegram购买会员']);
+        return view('livewire.order', ['meta_keywords' => 'Tg增加会员,Telegram营销,telegram购买会员']);
     }
 }
