@@ -5065,6 +5065,9 @@ input:checked + .toggle-bg{
 .border-l-0{
   border-left-width: 0px;
 }
+.border-b-2{
+  border-bottom-width: 2px;
+}
 .border-none{
   border-style: none;
 }
@@ -5514,6 +5517,9 @@ input:checked + .toggle-bg{
 }
 .pt-3{
   padding-top: 0.75rem;
+}
+.pt-1{
+  padding-top: 0.25rem;
 }
 .text-left{
   text-align: left;
