@@ -37,7 +37,9 @@
                                                         提交订单
                                                 </x-jet-button>
                                 </form>
-                        
+                                <div wire:loading.delay.shortest wire:target = pay>
+        正在处理订单请稍后...
+    </div>
                         </div>
 
                 </div>
