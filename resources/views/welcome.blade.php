@@ -60,6 +60,7 @@
   </section>
 
 <x-youshi/>
+<x-howstart/>
 <x-faq/>
   <x-footer/>
   <!-- Section: Design Block -->

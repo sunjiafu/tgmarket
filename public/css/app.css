@@ -4216,6 +4216,15 @@ input:checked + .toggle-bg{
 .-ml-px{
   margin-left: -1px;
 }
+.mb-32{
+  margin-bottom: 8rem;
+}
+.mb-20{
+  margin-bottom: 5rem;
+}
+.-mt-8{
+  margin-top: -2rem;
+}
 .block{
   display: block;
 }
@@ -4891,6 +4900,11 @@ input:checked + .toggle-bg{
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
+.space-x-6 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-x-reverse > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 1;
 }
@@ -5275,6 +5289,10 @@ input:checked + .toggle-bg{
 .bg-gray-900{
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+.bg-blue-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
 }
 .bg-opacity-25{
   --tw-bg-opacity: 0.25;
@@ -7302,6 +7320,11 @@ input:checked + .toggle-bg{
   }
 
 
+  .sm\:mb-0{
+    margin-bottom: 0px;
+  }
+
+
   .sm\:block{
     display: block;
   }
@@ -7539,6 +7562,11 @@ input:checked + .toggle-bg{
   }
 
 
+  .sm\:justify-between{
+    justify-content: space-between;
+  }
+
+
   .sm\:gap-4{
     gap: 1rem;
   }
@@ -7664,6 +7692,11 @@ input:checked + .toggle-bg{
 
   .sm\:text-left{
     text-align: left;
+  }
+
+
+  .sm\:text-center{
+    text-align: center;
   }
 
 
@@ -7806,6 +7839,11 @@ input:checked + .toggle-bg{
 
   .md\:mr-0{
     margin-right: 0px;
+  }
+
+
+  .md\:mr-6{
+    margin-right: 1.5rem;
   }
 
 
@@ -8146,6 +8184,12 @@ input:checked + .toggle-bg{
   }
 
 
+  .md\:py-8{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+
   .md\:pt-0{
     padding-top: 0px;
   }
@@ -8322,6 +8366,12 @@ input:checked + .toggle-bg{
 
   .lg\:col-span-full{
     grid-column: 1 / -1;
+  }
+
+
+  .lg\:my-8{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
 
@@ -8540,6 +8590,12 @@ input:checked + .toggle-bg{
 
   .lg\:gap-8{
     gap: 2rem;
+  }
+
+
+  .lg\:gap-x-12{
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
   }
 
 
