@@ -15,13 +15,14 @@
     @if (Route::has('login'))
     <div class="flex items-center md:order-2">
       @auth
-      <button type="button" class="flex mr-3 text-sm bg-white rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+      <button type="button" class="flex mr-3 text-sm bg-white  md:mr-0 focus:ring-4 focus:ring-gray-300 " id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">
           <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;">打开用户菜单</font>
           </font>
         </span>
         {{ Auth::user()->name }}
+        @svg('heroicon-o-chevron-down','w-6 h-3')
       </button>
       @else
       
@@ -37,16 +38,16 @@
         <div class="py-3 px-4">
           @auth
           <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
-          <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400"> {{ Auth::user()->balanceFloat }}</span>
+          <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">余额: {{ Auth::user()->balanceFloat }}</span>
           @else
 
-          <a href="{{ route('login') }}" type="button" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+          <a href="{{ route('login') }}" type="button" class="text-sm text-gray-700 dark:text-gray-500 underline">登录</a>
           @endauth
           @endif
         </div>
         <ul class="py-1" aria-labelledby="user-menu-button">
           <li>
-            <a href="{{ route('dashboard') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">个人中心</a>
+            <a href="{{ route('profile.show') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">个人中心</a>
           </li>
           <li>
             <a href="{{ route('orderlist') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">我的订单</a>
@@ -54,22 +55,24 @@
           <li>
             <a href="{{ route('pay') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">充值</a>
           </li>
-          <li>
-
+          </ul>
+<div class="py-2 flex justify-center">
             <form method="POST" action="{{ route('logout') }}">
               @csrf
-              <div class="nav-item">
-                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+             
+                <!-- <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                         this.closest('form').submit(); " role="button">
-                  <i class="fas fa-sign-out-alt"></i>
+                
 
-                  {{ __('Log Out') }}
-                </a>
-              </div>
+                  {{ __('退出') }}
+                </a> -->
+
+                <button class="py-2 px-3 text-xs font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="event.preventDefault(); this.closest('form').submit();">
+                  {{ __('退出') }}</button>
+     
             </form>
 
-          </li>
-        </ul>
+</div>
       </div>
       <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
         <span class="sr-only">Open main menu</span>

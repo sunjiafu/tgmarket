@@ -9,6 +9,9 @@ use App\Models\Orderlist;
 use App\Service\Api;
 use App\Jobs\OrderListPush;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ViewColumn;
+
+
 
 
 
@@ -40,12 +43,17 @@ class Myorder extends Component implements Tables\Contracts\HasTable
 
         return [
             Tables\Columns\TextColumn::make('serviceid')
+            ->searchable()
+            ->sortable()
+        
                 ->label('订单id'),
             Tables\Columns\TextColumn::make('created_at')
                 ->label('创建日期'),
             Tables\Columns\TextColumn::make('service')
+            ->searchable()
                 ->label('服务名称'),
             Tables\Columns\TextColumn::make('price')
+               ->sortable('price')
                 ->label('费用'),
             Tables\Columns\TextColumn::make('quantity')
                 ->label('数量'),
@@ -53,16 +61,18 @@ class Myorder extends Component implements Tables\Contracts\HasTable
                 ->label('关联链接'),
 
             Tables\Columns\TextColumn::make('status')
-            ->label('订单状态')
+            ->label('订单状态'),
+      
+        
 
 
         ];
     }
 
-    protected function isTablePaginationEnabled(): bool  //禁用分页功能
-    {
-        return false;
-    } 
+    // protected function isTablePaginationEnabled(): bool  //禁用分页功能
+    // {
+    //     return false;
+    // } 
 
 
     protected function getTableEmptyStateHeading(): ?string
@@ -73,6 +83,7 @@ class Myorder extends Component implements Tables\Contracts\HasTable
     public function render()
     {
        
+        OrderListPush::dispatch(auth()->user()->Order);
    
     
         return view('livewire.orderlist');

@@ -36,6 +36,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/api', function () {
+        return view('api.index');
+    })->name('api-tokens');
 
     Route::get('order', Order::class)->name('order');
 
