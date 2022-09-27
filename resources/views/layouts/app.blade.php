@@ -34,9 +34,9 @@
         @include('navigation-menu')
     </div>
 
-
+<div>
     {{ $slot }}
-
+</div>
 
     @livewire('notifications')
 </body>

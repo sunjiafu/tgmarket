@@ -18,7 +18,7 @@
         </div>
         </div>
         </div>
-        <x-footer />
+     
 </main>
 
-
+<x-footer />

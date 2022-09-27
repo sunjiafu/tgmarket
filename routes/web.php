@@ -6,6 +6,8 @@ use App\Http\Livewire\Pay;
 use App\Http\Controllers\pay\BitcoinContorller;
 use App\Http\Controllers\pay\UsdtContorller;
 use App\Http\Controllers\pay\UsdtController;
+use App\Http\Livewire\Postlist;
+use App\Http\Livewire\PostShow;
 use App\Http\Livewire\Servicelist;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +27,11 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('service', Servicelist::class)->name('service');
-Route::post('btcpay/notifyurl','App\Http\Controllers\pay\BitcoinContorller@notifyUrl');
-Route::post('usdtpay/notifyurl',[UsdtController::class,'notifyUrl']);
+Route::post('btcpay/notifyurl', 'App\Http\Controllers\pay\BitcoinContorller@notifyUrl');
+Route::post('usdtpay/notifyurl', [UsdtController::class, 'notifyUrl']);
+Route::get('/post/{url}', PostShow::class)->name('PostShow');
+Route::get('tgmarketing', Postlist::class)->name('Post');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -39,6 +44,8 @@ Route::middleware([
     Route::get('/api', function () {
         return view('api.index');
     })->name('api-tokens');
+
+
 
     Route::get('order', Order::class)->name('order');
 
