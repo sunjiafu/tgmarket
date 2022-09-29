@@ -4,11 +4,11 @@
     <!-- logo -->
     <a href="{{ route('index') }}" class="flex items-center">
 
- 
-      <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
+       @svg('tglogo','mr-3 h-6 sm:h-9')
+    
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
         <font style="vertical-align: inherit;">
-          <font style="vertical-align: inherit;">Tgmarketing</font>
+          <font style="vertical-align: inherit;">TG营销系统</font>
         </font>
       </span>
     </a>

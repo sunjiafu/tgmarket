@@ -15,63 +15,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('js/app.js') }}">
- 
+
   <script src="/js/flowbite.js"></script>
 
 
 
 
-  <!-- Styles -->
+
 
 </head>
 
-<div>
 
-  <!-- Section: Design Block -->
-  <section class="mb-10">
+<x-Nav />
 
-    <x-Nav />
-    <div class="px-6 py-6 md:px-12 bg-gray-100 text-gray-800 text-center lg:text-left">
-      <div class="container mx-auto xl:px-32">
-        <div class="grid lg:grid-cols-2 gap-12 flex items-center">
-          <div class="mt-12 lg:mt-4">
-            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">The best offer <br /><span class="text-blue-600">购买电报会员</span></h1>
-            <p class="text-gray-600">
-              为您的Telegram 频道或群组购买真实会员，合法且有质量保证，市场价格最低
-            </p>
+<!-- Banner start -->
 
-            <div class="py-12">
-              <span class="  bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-2.5 rounded dark:bg-blue-200 dark:text-blue-800">购买TG会员</span>
-              <span class="  bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-2.5 rounded dark:bg-blue-200 dark:text-blue-800">购买帖子浏览量</span>
-              <span class="  bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-2.5 rounded dark:bg-blue-200 dark:text-blue-800">购买投票</span>
+<section class="bg-gray-100 dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+    <a href="{{route('service')}}" class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
+      <span class="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span class="text-sm font-medium">看看我们有哪些新的服务</span>
+      <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+      </svg>
+    </a>
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">快速获得Telegram订阅用户</h1>
+    <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">通过使用我们的系统让您快速增加Telegram群组或频道的会员,以最廉价的价格提供最优质的服务，您只需要注册一个账号，选择您需要的服务，后台可以实时查看订单状态。</p>
+    <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+      <a href="{{route('order')}}" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+        创建订单
+        <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </a>
+      <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
 
-            </div>
-          </div>
-          <!-- 登录表单-->
-          <x-login />
-        </div>
-      </div>
+        @svg('heroicon-o-question-mark-circle','mr-2 -ml-1 w-5 h-5')
 
+        如何使用？
+      </a>
     </div>
 
-<!-- 优势介绍结束 -->
-<!-- Section: Design Block -->
+  </div>
+</section>
 
+<!-- Banner end -->
 
-<!-- Container for demo purpose -->
-  </section>
-
-<x-youshi/>
-<x-howstart/>
-<x-faq/>
-  <x-footer/>
-  <!-- Section: Design Block -->
-<!-- /footer -->
-
-</div>
-
-</div>
-
+<x-youshi />
+<x-howstart />
+<x-faq />
+<x-footer />
 
 </body>
 

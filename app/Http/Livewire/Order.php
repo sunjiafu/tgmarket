@@ -11,6 +11,8 @@ use Filament\Forms\Components\Card;
 use Illuminate\Support\HtmlString;
 use App\Service\Api;
 use Filament\Notifications\Notification;
+use Illuminate\Support\Facades\Auth;
+
 
 class Order extends Component implements Forms\Contracts\HasForms
 {

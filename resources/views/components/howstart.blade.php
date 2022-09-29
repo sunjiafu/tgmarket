@@ -1,8 +1,10 @@
-<div class="container my-24 px-6 mx-auto">
+
 
     <!-- Section: Design Block -->
-    <section class="mb-10 text-gray-800 text-center">
-        <h2 class="text-3xl font-bold mb-20">我该如何开始?</h2>
+
+    <section class="mb-10 text-gray-800 bg-gray-100 text-center">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <h2 class="text-3xl font-bold py-6 mb-20">我该如何开始?</h2>
 
         <div class="grid lg:gap-x-12 lg:grid-cols-3">
             <div class="mb-12 lg:mb-0">
@@ -48,6 +50,8 @@
                 <div class="rounded-lg shadow-lg h-full block bg-white">
                     <div class="flex justify-center">
                         <div class="p-4 bg-blue-600 rounded-full shadow-lg inline-block -mt-8">
+
+                      
                         <svg class="w-7 h-7 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544 512">
                                 <path fill="currentColor" d="M527.79 288H290.5l158.03 158.03c6.04 6.04 15.98 6.53 22.19.68 38.7-36.46 65.32-85.61 73.13-140.86 1.34-9.46-6.51-17.85-16.06-17.85zm-15.83-64.8C503.72 103.74 408.26 8.28 288.8.04 279.68-.59 272 7.1 272 16.24V240h223.77c9.14 0 16.82-7.68 16.19-16.8zM224 288V50.71c0-9.55-8.39-17.4-17.84-16.06C86.99 51.49-4.1 155.6.14 280.37 4.5 408.51 114.83 513.59 243.03 511.98c50.4-.63 96.97-16.87 135.26-44.03 7.9-5.6 8.42-17.23 1.57-24.08L224 288z"></path>
                             </svg>
@@ -63,7 +67,16 @@
                 </div>
             </div>
         </div>
+
+        </div>
+        <a href="{{route('order')}}" class="inline-flex justify-center items-center mb-10 p-5 text-base font-medium text-gray-500 bg-white rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
+        @svg('telegram','ml-3 w-7 h-7')
+                           
+    <span class="w-full">现在去试试我们的Telegram营销系统</span>
+
+    <svg aria-hidden="true" class="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+</a> 
     </section>
+
     <!-- Section: Design Block -->
 
-</div>
