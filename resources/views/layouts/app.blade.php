@@ -34,7 +34,7 @@
         @if(Auth::check())
         @include('navigation-menu')
         @else
-        @include('components.nav')
+        @include('components.Nav')
 
         @endif
     </div>
