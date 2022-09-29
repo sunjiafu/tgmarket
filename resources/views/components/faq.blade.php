@@ -77,8 +77,8 @@
                                
                                 <p class="mb-2 text-gray-500 dark:text-gray-400">我们的联系方式:</p>
                                 <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                                    <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Telegram</a></li>
-                                    <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">WhatsApp</a></li>
+                                    <li><a href="https://t.me/TG_Supportf" class="text-blue-600 dark:text-blue-500 hover:underline">Telegram</a></li>
+                                    <li><a href="#" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">WhatsApp</a></li>
                                 </ul>
                             </div>
                         </div>
