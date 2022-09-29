@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::get('service', Servicelist::class)->name('service');
 Route::post('btcpay/notifyurl', 'App\Http\Controllers\pay\BitcoinContorller@notifyUrl');
 Route::post('usdtpay/notifyurl', [UsdtController::class, 'notifyUrl']);
-Route::get('/post/{url}', PostShow::class)->name('PostShow');
+Route::get('tgmarketing/{url}', PostShow::class)->name('PostShow');
 Route::get('tgmarketing', Postlist::class)->name('Post');
 
 

@@ -95,6 +95,11 @@
         </x-nav-link>
         </li>
 
+        <x-nav-link href="{{ route('Post') }}" :active="request()->routeIs('Post')">
+        TG营销攻略
+        </x-nav-link>
+        </li>
+
       </ul>
     </div>
   </div>

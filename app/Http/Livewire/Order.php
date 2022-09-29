@@ -194,7 +194,7 @@ class Order extends Component implements Forms\Contracts\HasForms
             'price' => $this->price,
             'quantity' => $this->shuliang,
             'url' => $this->tglink,
-            'status' => 'Processing'
+            'status' => '进行中'
 
 
         ]);

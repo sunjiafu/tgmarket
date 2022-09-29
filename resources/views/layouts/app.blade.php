@@ -11,7 +11,7 @@
 
     <title>@yield('pagetitle')-{{ config('app.name') }}</title>
     <meta name="keywords" content="@yield('meta_keywords')">
-    <meta name="description" content="我们已低廉的价格为您提供高质量的Telegram频道或群组的营销服务">
+    <meta name="description" content="我们以低廉的价格为您提供高质量的Telegram频道或群组的营销服务">
 
     <style>
         [x-cloak] {
@@ -31,7 +31,12 @@
 
 <body class="antialiased">
     <div>
+        @if(Auth::check())
         @include('navigation-menu')
+        @else
+        @include('components.nav')
+
+        @endif
     </div>
 
 <div>

@@ -48,10 +48,13 @@ class OrderListPush implements ShouldQueue
 
             $smmstatus = collect($this->Api->status($item->serviceid));
 
-            if ($item->status != $smmstatus['status']) {
+            if($smmstatus['status']=='Completed'){
 
-                Orderlist::query()->where('id', $item->id)->update(['status' => $smmstatus['status']]);
+                Orderlist::query()->where('id', $item->id)->update(['status' => "已完成"]);
+
             }
+
+      
         });
   
   

@@ -1,7 +1,7 @@
 @section('pagetitle','Telegram营销攻略')
 <main class="bg-white dark:bg-gray-800 rounded-2xl  relative ">
 
-        <x-sidebar />
+
 
         <div class="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
                 <div class="pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0">
@@ -11,8 +11,8 @@
 <section class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-          <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Blog</h2>
-          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
+          <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Telegram营销攻略</h2>
+          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">发布与Telegram以及社会化媒体营销的相关文章</p>
       </div> 
       <div class="grid gap-8 lg:grid-cols-2">
           @foreach ($post as $posts)

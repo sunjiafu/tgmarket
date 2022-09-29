@@ -3,11 +3,13 @@
 
 <head>
 
-  {!! seo() !!}
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Laravel</title>
+  <title>最便宜的价格购买真实的Telegram会员--{{ config('app.name') }}</title>
+  <meta name="description" content="如果您想通过购买真实的Telegram会员来营销您的群组或频道，只需要在本站注册成为会员，我们为用户提供全天候24/7的客户支持，提供最便宜且优质的服务">
+
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
