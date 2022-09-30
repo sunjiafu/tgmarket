@@ -4287,6 +4287,9 @@ input:checked + .toggle-bg{
 .h-2{
   height: 0.5rem;
 }
+.h-auto{
+  height: auto;
+}
 .max-h-96{
   max-height: 24rem;
 }

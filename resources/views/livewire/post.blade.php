@@ -10,33 +10,35 @@
               <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{{$posts->title}}</h1>
           </header> 
           <style>
-          
-               p{
-           
-line-height: 2;
-text-indent: 2rem;
-      
-               }
 
-               ol{
+         p{
 
-                list-style-type: disc;
-                padding: 10px;
+            text-indent: 2rem;
+         }
 
-               }
+          ol{
 
-               ul{
+             list-style-type: disc;
+             list-style-position: inside;
 
-                list-style-type: decimal;
-                padding: 10px;
+          }
 
-               }
+     .content a{
 
-         
-      
+     text-decoration-line: underline;
+     color: blue;
+          }
+        .content img{
 
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            border-radius: 8px;
+        }
           </style>
-<div class="content py-6  space-y-1 text-gray-500 ">
+   
+<div class="content py-6  space-y-1 text-gray-500 leading-loose  ">
 {!!$posts->content!!}
 </div>
       </article>
@@ -44,5 +46,5 @@ text-indent: 2rem;
   </div>
 </main>
 
-<p class=" indent-8"></p>
 
+<img class=" mx-auto  max-w-lg h-auto rounded-lg"

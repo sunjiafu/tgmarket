@@ -38,16 +38,10 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/img',
+            'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
 
-        'img' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public/img'),
-            'url' => env('APP_URL').'/storage/img',
-            'visibility' => 'public',
-        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -64,7 +58,6 @@ return [
     /*
     |--------------------------------------------------------------------------
     | Symbolic Links
-
     |--------------------------------------------------------------------------
     |
     | Here you may configure the symbolic links that will be created when the
@@ -74,7 +67,7 @@ return [
     */
 
     'links' => [
-        public_path('img') => storage_path('app/public'),
+        public_path('storage') => storage_path('app/public'),
     ],
 
 ];

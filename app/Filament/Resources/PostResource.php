@@ -12,9 +12,15 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Livewire\WithFileUploads;
+
+
 
 class PostResource extends Resource
 {
+
+    use WithFileUploads;
+
     protected static ?string $model = Post::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
@@ -28,10 +34,19 @@ class PostResource extends Resource
                 Forms\Components\TextInput::make('author')->required(),
                 Forms\Components\TextInput::make('jianjie')->required(),
                 Forms\Components\RichEditor::make('content')
-                
-                    ->fileAttachmentsVisibility('public')
-
-
+                    ->toolbarButtons([
+                        'attachFiles',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'edit',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'preview',
+                        'strike',
+                    ])
+                  
                     ->required(),
                 Forms\Components\TextInput::make('url')->required(),
                 //
