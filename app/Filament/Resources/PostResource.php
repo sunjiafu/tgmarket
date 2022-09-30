@@ -27,7 +27,12 @@ class PostResource extends Resource
                 Forms\Components\TextInput::make('title')->required(),
                 Forms\Components\TextInput::make('author')->required(),
                 Forms\Components\TextInput::make('jianjie')->required(),
-                Forms\Components\RichEditor::make('content')->required(),
+                Forms\Components\RichEditor::make('content')
+                
+                    ->fileAttachmentsVisibility('public')
+
+
+                    ->required(),
                 Forms\Components\TextInput::make('url')->required(),
                 //
             ]);
