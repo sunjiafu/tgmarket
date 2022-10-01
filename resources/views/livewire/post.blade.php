@@ -1,6 +1,8 @@
+
 @foreach ($post as $posts)
 @section('pagetitle',$posts->title)
 @section('meta_keywords',$posts->auther)
+<div class="post">
 <style>
     .content p {
 
@@ -96,6 +98,8 @@
 
             <header class="mb-4 lg:mb-6 not-format">
 
+          
+
 
                 <h1 class="mb-4 pt-8 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{{$posts->title}}</h1>
             </header>
@@ -112,3 +116,4 @@
 
 
 <x-footer />
+</div>
