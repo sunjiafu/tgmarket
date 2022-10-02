@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
+
 use App\Models\Orderlist;
 use App\Service\Api;
 use App\Jobs\OrderListPush;
@@ -47,7 +48,8 @@ class Myorder extends Component implements Tables\Contracts\HasTable
             ->sortable()
         
                 ->label('订单id'),
-            Tables\Columns\TextColumn::make('created_at')
+            Tables\Columns\TextColumn::make('updated_at')
+            ->sortable()
                 ->label('创建日期'),
             Tables\Columns\TextColumn::make('service')
             ->searchable()
@@ -68,6 +70,9 @@ class Myorder extends Component implements Tables\Contracts\HasTable
 
         ];
     }
+
+
+
 
     // protected function isTablePaginationEnabled(): bool  //禁用分页功能
     // {
